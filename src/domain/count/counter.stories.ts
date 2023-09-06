@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import CountExample from './index.vue'
+import CountExample from './counter.vue'
 
 const meta = {
   title: 'app-components/count-example',

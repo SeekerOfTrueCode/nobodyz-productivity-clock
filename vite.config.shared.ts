@@ -6,6 +6,7 @@ import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import layouts from 'vite-plugin-vue-layouts'
 import pages from 'vite-plugin-pages'
+import vuetify from 'vite-plugin-vuetify'
 
 export const sharedConfig: UserConfig = {
   resolve: {
@@ -24,6 +25,7 @@ export const sharedConfig: UserConfig = {
 
 export const plugins: UserConfig['plugins'] = [
   vue(),
+  vuetify({ autoImport: true }),
   vueI18nPlugin({
     include: resolvePath('src/locales/**')
   }),

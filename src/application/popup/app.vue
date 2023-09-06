@@ -2,7 +2,7 @@
 
 <template>
   <!-- v-slot="{ Component }" -->
-  <div v-if="$appLoading.value">Loading...</div>
+  <div style="text-align: center;" v-if="$appLoading.value">Loading...</div>
   <RouterView v-else></RouterView>
 </template>
 

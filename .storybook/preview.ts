@@ -1,11 +1,14 @@
 import type { Preview } from "@storybook/vue3";
 import { setup } from '@storybook/vue3';
-import { setupStore } from '@/plugins/setup-store'
-import { setupI18n } from '@/plugins/setup-i18n'
+import { setupStore } from '@/infrastructure/plugins/setup-store'
+import { setupI18n } from '@/infrastructure/plugins/setup-i18n'
+import { setupVuetify } from "@/infrastructure/plugins/setup-vuetify";
 import stringify from 'json-stringify-safe'
+import resizeObserver from 'resize-observer-polyfill'
 
 setup((app) => {
-  setupStore(app, 'popup', {
+  const name = 'popup'
+  setupStore(app, name, {
     async get(key) {
       return {
         [key as string]: JSON.parse(localStorage.getItem(key as any) ?? 'null')
@@ -31,7 +34,9 @@ setup((app) => {
       }
     } as any
   })
-  setupI18n(app, 'popup')
+  setupI18n(app, name)
+  setupVuetify(app, name)
+  global.ResizeObserver = resizeObserver
 });
 
 const preview: Preview = {

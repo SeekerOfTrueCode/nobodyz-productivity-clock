@@ -4,12 +4,15 @@ import App from './app.vue'
 import { setupStore } from '@/infrastructure/plugins/setup-store'
 import { setupI18n } from '@/infrastructure/plugins/setup-i18n'
 import { setupLoading } from '@/infrastructure/plugins/setup-loading'
+import { setupVuetify } from '@/infrastructure/plugins/setup-vuetify'
 import { delay } from '@/utils/delay'
 
 export function mountApp(rootContainer: string | Element) {
+  const name = 'content-script'
   const app = createApp(App)
-  setupStore(app, 'content-script')
-  setupI18n(app, 'content-script')
+  setupStore(app, name)
+  setupI18n(app, name)
+  setupVuetify(app, name)
   setupLoading(app, async () => {
     // FIXME: 
     // Instead of this useless delay here put your async loading logic (for example loading logged in user from the localStorage with async fn)

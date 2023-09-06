@@ -8,6 +8,18 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     clearMocks: true,
-    setupFiles: './scripts/setup-tests.ts' //👈 Our configuration file enabled here
+    setupFiles: './scripts/setup-tests.ts', //👈 Our configuration file enabled here
+    deps: {
+      optimizer: {
+        web: {
+          include: ['vuetify']
+        }
+      }
+    },
+    server: {
+      deps: {
+        inline: ['vuetify']
+      }
+    }
   }
 })

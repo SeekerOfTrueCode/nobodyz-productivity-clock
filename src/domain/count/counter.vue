@@ -8,9 +8,9 @@ await countStore.$persistedState.isReady()
 
 <template>
   <div class="card">
-    <button type="button" @click="() => countStore.count++">
+    <n-button @click="() => countStore.count++">
       Count is {{ countStore.count }}
-    </button>
+    </n-button>
     <p>Edit <code>components/count-example.vue</code> to test HMR</p>
     <p></p>
   </div>
