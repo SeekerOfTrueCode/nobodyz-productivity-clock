@@ -1,7 +1,7 @@
 import { setupOffscreenDocument } from '@/utils/service-worker/setup-offscreen-document'
 import { PATHS } from '@@/shared/constants/paths'
-import { createRenderlessAppAndStore } from '@/app/background/main'
-import { useCountStore } from '@/stores/count'
+import { createRenderlessAppAndStore } from '@/application/background/main'
+// import { useCountStore } from '@/stores/count'
 
 declare const self: ServiceWorkerGlobalScope
 const serviceWorker = self
@@ -31,9 +31,9 @@ chrome.runtime.onInstalled.addListener(() => {
   })
 
   createRenderlessAppAndStore()
-  const countStore = useCountStore()
-  await countStore.$persistedState.isReady()
-  console.log('!!custom background script [count store]', countStore.count)
+  // const countStore = useCountStore()
+  // await countStore.$persistedState.isReady()
+  // console.log('!!custom background script [count store]', countStore.count)
 })()
 
 export { }

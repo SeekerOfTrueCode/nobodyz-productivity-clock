@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCountStore } from '@/stores/count'
+import { useCountStore } from './stores/count'
 defineProps<{ [key: string]: unknown }>()
 
 const countStore = useCountStore()

@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './app.vue'
-import { setupRouter } from '@/plugins/setup-router'
-import { setupStore } from '@/plugins/setup-store'
-import { setupI18n } from '@/plugins/setup-i18n'
-import { setupLoading } from '@/plugins/setup-loading'
+import { setupRouter } from '@/infrastructure/plugins/setup-router'
+import { setupStore } from '@/infrastructure/plugins/setup-store'
+import { setupI18n } from '@/infrastructure/plugins/setup-i18n'
+import { setupLoading } from '@/infrastructure/plugins/setup-loading'
 import { delay } from '@/utils/delay'
 
 const app = createApp(App)

@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import Counter from '@/domain/count/counter.vue'
 const { t } = useI18n({})
 </script>
 
 <template>
   <Suspense>
-    <CountExample />
+    <Counter />
   </Suspense>
   <RouterLink :to="'/about'">{{ t("route.about") }}</RouterLink>
   <RouterLink :to="'/about/complex'">{{ t("route.aboutComplex") }}</RouterLink>

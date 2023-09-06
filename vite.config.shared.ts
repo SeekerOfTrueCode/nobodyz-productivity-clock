@@ -63,7 +63,10 @@ export const plugins: UserConfig['plugins'] = [
       }
     ],
     defaultExportByFilename: false,
-    dirs: ['src/composables', './composables/**'],
+    dirs: [
+      'src/infrastructure/composables', 
+      'src/infrastructure/composables/**'
+    ],
     dts: './auto-imports.d.ts',
     vueTemplate: false,
     eslintrc: {
@@ -74,9 +77,9 @@ export const plugins: UserConfig['plugins'] = [
   }),
   components({
     dts: true,
-    dirs: ['src/components'],
+    dirs: ['src/ui'],
     extensions: ['vue'],
-    // globs: ['src/components/*.{vue}'], // this prevents from registering
+    // globs: ['src/ui/*.{vue}'], // this prevents from registering
     deep: true,
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/]
@@ -84,13 +87,13 @@ export const plugins: UserConfig['plugins'] = [
   }),
   pages({
     dirs: [
-      { dir: 'src/app/popup/pages', baseRoute: 'popup' }
+      { dir: 'src/application/popup/pages', baseRoute: 'popup' }
     ],
     exclude: ['**/components/*.vue']
   }),
   layouts({
     layoutsDirs: [
-      'src/app/popup/layouts'
+      'src/application/popup/layouts'
     ],
     exclude: ['**/components/*.vue'],
     defaultLayout: 'default'
