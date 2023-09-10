@@ -3,6 +3,7 @@ import { setup } from '@storybook/vue3';
 import { setupStore } from '@/infrastructure/plugins/setup-store'
 import { setupI18n } from '@/infrastructure/plugins/setup-i18n'
 import { setupVuetify } from "@/infrastructure/plugins/setup-vuetify";
+import { withVuetify } from './decorators/with-vuetify.decorator'
 import stringify from 'json-stringify-safe'
 import resizeObserver from 'resize-observer-polyfill'
 
@@ -50,5 +51,7 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [withVuetify];
 
 export default preview;

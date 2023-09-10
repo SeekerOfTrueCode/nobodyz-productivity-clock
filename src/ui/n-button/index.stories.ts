@@ -4,10 +4,6 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import NButton from './index.vue'
 
 const meta = {
-  /* 👇 The title prop is optional.
-             * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
-             * to learn how to generate automatic titles
-             */
   title: 'core-components/n-button',
   component: NButton,
   render: (args: unknown) => ({
@@ -15,13 +11,11 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<n-button data-testid="n-button">Example</n-button>'
+    template: '<n-button>Example</n-button>'
   }),
   parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen'
+    layout: 'centered'
   },
-  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
     // size: { control: 'select', options: ['small', 'medium', 'large'] },

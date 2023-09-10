@@ -9,13 +9,17 @@ export default defineConfig({
     environment: 'happy-dom',
     clearMocks: true,
     setupFiles: './scripts/setup-tests.ts', //👈 Our configuration file enabled here
-    deps: {
-      optimizer: {
-        web: {
-          include: ['vuetify']
-        }
-      }
-    },
+    // deps: {
+    //   inline: ['vuetify']
+    // }
+    // deps: {
+    //   optimizer: {
+    //     web: {
+    //       include: ['vuetify']
+    //     }
+    //   }
+    // },
+    // threads: false
     server: {
       deps: {
         inline: ['vuetify']

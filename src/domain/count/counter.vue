@@ -11,6 +11,7 @@ await countStore.$persistedState.isReady()
     <n-button @click="() => countStore.count++">
       Count is {{ countStore.count }}
     </n-button>
+
     <p>Edit <code>components/count-example.vue</code> to test HMR</p>
     <p></p>
   </div>

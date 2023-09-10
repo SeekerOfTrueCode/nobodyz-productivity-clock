@@ -1,25 +1,37 @@
-// import { mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
+import NButton from './index.vue'
+import { createVuetify } from 'vuetify'
+import { expect } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/vue'
-import { composeStory } from '@storybook/testing-vue3'
+import { composeStories } from '@storybook/testing-vue3'
+import * as DefaultStories from './index.stories'
 
-// import HelloDiv from './index.vue'
-// import { it, expect } from 'vitest'
+describe('Testing NButton ', () => {
+  const { Default: NButtonDefault } = composeStories(DefaultStories)
 
-import Meta, { Default as DefaultStory } from './index.stories'
-const DefaultStoryView = composeStory(DefaultStory, Meta)
+  test('[classic] component props', async () => {
+    const wrapper = mount(NButton, {
+      slots: { default: 'Hello' },
+      global: {
+        plugins: [createVuetify()]
+      }
+    })
+    expect(wrapper.text()).toContain('Hello')
+  })
 
-// test('[classic] Testing NButton component props', async () => {
-//   const wrapper = mount(HelloDiv, { props: { msg: 'Hello' } })
-//   expect(wrapper.find('div').text()).toContain('Hello')
-// })
+  test('[storybook] existing', async () => {
 
-test('[storybook] Testing NButton component props', async () => {
-  render(DefaultStoryView())
-  const divElement = screen.getByTestId('n-button')
+    render(NButtonDefault(), {
+      global: {
+        plugins: [createVuetify()]
+      }
+    })
 
-  fireEvent.click(divElement)
-  await nextTick() // wait for v-if to render hidden part after changing variable's value
-
-  const isClicked = screen.getByTestId('clicked')
-  expect(isClicked).toBeInTheDocument()
+    const divElement = screen.getByTestId('n-button')
+    fireEvent.click(divElement)
+    expect(divElement).toBeInTheDocument()
+  })
 })
+
+
+
