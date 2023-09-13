@@ -16,9 +16,6 @@ const drawer = ref(false)
       <v-list>
         <v-list-item title="Navigation drawer"> </v-list-item>
       </v-list>
-      <v-icon icon="plus" />
-      <v-icon icon="mdiPlus" />
-      <v-icon icon="mdi-plus" />
     </v-navigation-drawer>
 
     <v-main class="d-flex align-center justify-center">
