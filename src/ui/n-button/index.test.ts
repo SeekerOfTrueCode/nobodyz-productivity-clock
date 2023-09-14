@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import NButton from './index.vue'
-import { createVuetify } from 'vuetify'
+import { createVuetify } from '@/infrastructure/plugins/setup-vuetify/create-vuetify'
 import { expect } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/vue'
 import { composeStories } from '@storybook/testing-vue3'

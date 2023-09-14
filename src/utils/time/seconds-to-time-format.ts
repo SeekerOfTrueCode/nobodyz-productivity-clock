@@ -1,4 +1,5 @@
 export function secondsToTimeFormat(seconds: number) {
+  if (seconds < 0) seconds = 0
   const sec_num = parseInt(seconds as never, 10) // don't forget the second param
   let h: string | number = Math.floor(sec_num / 3600)
   let m: string | number = Math.floor((sec_num - h * 3600) / 60)

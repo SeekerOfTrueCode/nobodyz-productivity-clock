@@ -11,7 +11,7 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<n-button>Example</n-button>'
+    template: '<n-button v-bind="args">Example</n-button>'
   }),
   parameters: {
     layout: 'centered'

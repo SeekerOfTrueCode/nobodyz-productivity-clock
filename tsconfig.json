@@ -30,6 +30,7 @@
       "@testing-library/jest-dom",
       "@intlify/unplugin-vue-i18n/messages"
     ],
+    "typeRoots": ["./node_modules/@types/", "./node_modules"],
     "paths": {
       "@/*": [
         "./src/*"
@@ -40,7 +41,7 @@
     }
   },
   "include": [
-    ".storybook/preview.ts",
+
 
     "shared/**/*.ts",
 

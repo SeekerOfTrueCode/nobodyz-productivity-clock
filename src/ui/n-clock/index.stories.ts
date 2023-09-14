@@ -11,7 +11,7 @@ const meta = {
     setup() {
       return { args }
     },
-    template: '<n-clock />'
+    template: '<n-clock v-bind="args" />'
   }),
   parameters: {
     layout: 'centered'
@@ -26,23 +26,33 @@ const meta = {
   args: {
     modelValue: 0,
     valueMax: undefined,
-    size: 32
+    size: 96
   } // default value
 } satisfies Meta<typeof NClock>
 
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const DisplayMessage: Story = {
+export const DefaultValues: Story = {
   args: {
     modelValue: 0,
     valueMax: undefined,
-    size: 32
+    size: 96
   }
-  //   play: async ({ canvasElement }: any) => {
-  //     const canvas = within(canvasElement)
-  //     const loginButton = await canvas.getByText('button', { name: /Display test/i })
-  //     await userEvent.click(loginButton)
-  //   }
 }
 
+export const NegativeValue: Story = {
+  args: {
+    modelValue: -50,
+    valueMax: undefined,
+    size: 96
+  }
+}
+
+export const AboveHalfTime: Story = {
+  args: {
+    modelValue: 61,
+    valueMax: 120,
+    size: 96
+  }
+}

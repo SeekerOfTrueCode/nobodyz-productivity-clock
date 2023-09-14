@@ -7,17 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    copy: typeof import('./src/ui/hello-div/index copy.vue')['default']
-    CountExample: typeof import('./src/ui/application/count-example/index.vue')['default']
-    HelloDiv: typeof import('./src/ui/hello-div/index.vue')['default']
     NButton: typeof import('./src/ui/n-button/index.vue')['default']
     NClock: typeof import('./src/ui/n-clock/index.vue')['default']
-    NClockPanel: typeof import('./src/ui/n-clock-panel/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TimerFooter: typeof import('./src/ui/n-clock-panel/partials/timer-footer.vue')['default']
-    TimerHeader: typeof import('./src/ui/n-clock-panel/partials/timer-header.vue')['default']
-    TimerSessionStep: typeof import('./src/ui/n-clock-panel/partials/timer-session-step.vue')['default']
-    TimerTime: typeof import('./src/ui/n-clock-panel/partials/timer-time.vue')['default']
   }
 }

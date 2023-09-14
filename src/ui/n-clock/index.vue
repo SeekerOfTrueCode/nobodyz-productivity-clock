@@ -11,7 +11,7 @@ const props = withDefaults(
   {
     modelValue: 0,
     valueMax: undefined,
-    size: 32
+    size: 96
   }
 )
 
@@ -19,24 +19,23 @@ const progress = computed(() => {
   if (props.valueMax == null) return 0
   return percentageOf(props.modelValue, props.valueMax)
 })
-const fontSize = computed(() => `${props.size / 2}px`)
+const fontSize = computed(() => `${Math.round(props.size / 5.25)}px`)
 const timeCurrent = computed(() => secondsToTimeFormat(props.modelValue)) // timeCurrent: '00:00:00'
 </script>
 
 <template>
   <!-- FIXME: padding also has to be calculated -->
-  <div class="n-clock flex-inline-center"> 
-    <v-progress-circular :model-value="progress" :size="size" />
+  <div data-testid="n-clock" class="n-clock flex-inline-center"> 
     <div class="n-clock__text-container flex-center">
       <span class="n-clock__text" :style="{ fontSize }" v-text="timeCurrent" />
     </div>
+    <v-progress-circular :model-value="progress" :size="size" />
   </div>
 </template>
 
 <style>
 .n-clock {
   position: relative;
-  padding: 8px 16px;
 }
 .n-clock__text-container {
   position: absolute;

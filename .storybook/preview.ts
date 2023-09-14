@@ -10,7 +10,7 @@ import resizeObserver from 'resize-observer-polyfill'
 setup((app) => {
   const name = 'popup'
   setupStore(app, name, {
-    async get(key) {
+    async get(key: any) {
       return {
         [key as string]: JSON.parse(localStorage.getItem(key as any) ?? 'null')
       }
@@ -22,7 +22,7 @@ setup((app) => {
         localStorage.setItem(key, stringifiedValue)
       })
     },
-    async remove(keys) {
+    async remove(keys: any) {
       localStorage.removeItem(keys as string)
     },
     async clear() {
