@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { VIcon } from 'vuetify/components'
 // import { within, userEvent } from '@storybook/testing-library'
 
 import NButton from './index.vue'
@@ -18,6 +19,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    icon: { control: 'text' }
     // size: { control: 'select', options: ['small', 'medium', 'large'] },
     // backgroundColor: { control: 'color' },
     // onClick: { action: 'clicked' }
@@ -30,12 +32,25 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-
+    icon: undefined
   }
   //   play: async ({ canvasElement }: any) => {
   //     const canvas = within(canvasElement)
   //     const loginButton = await canvas.getByText('button', { name: /Display test/i })
   //     await userEvent.click(loginButton)
   //   }
+}
+
+export const Icon: Story = {
+  args: {
+    icon: 'mdi-plus'
+  },
+  render: (args: unknown) => ({
+    components: { NButton, VIcon },
+    setup() {
+      return { args }
+    },
+    template: '<n-button v-bind="args"></n-button>'
+  })
 }
 

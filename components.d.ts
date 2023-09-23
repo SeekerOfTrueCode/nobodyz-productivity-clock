@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     NButton: typeof import('./src/ui/n-button/index.vue')['default']
     NClock: typeof import('./src/ui/n-clock/index.vue')['default']
+    NClockPanel: typeof import('./src/ui/n-clock-panel/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
