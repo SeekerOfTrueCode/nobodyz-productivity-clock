@@ -24,7 +24,6 @@ const timeCurrent = computed(() => secondsToTimeFormat(props.modelValue)) // tim
 </script>
 
 <template>
-  <!-- FIXME: padding also has to be calculated -->
   <div data-testid="n-clock" class="n-clock flex-inline-center"> 
     <div class="n-clock__text-container flex-center">
       <span class="n-clock__text" :style="{ fontSize }" v-text="timeCurrent" />
