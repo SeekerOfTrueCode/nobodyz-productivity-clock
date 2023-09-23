@@ -10,21 +10,22 @@ defineSlots<{
 const props = withDefaults(
   defineProps<{
     modelValue: number;
-    valueMax?: number | undefined;
+    valueMax?: number | undefined; // FIXME: maybe modelValueMax?
     size?: number;
-    clockSidesRation?: number;
+    sizeClockSidesRation?: number;
   }>(),
   {
     modelValue: 0,
     valueMax: undefined,
     size: 144,
-    clockSidesRation: 0.6
+    sizeClockSidesRation: 0.6
   }
 )
 
 const SIDES_COUNT = 2
 const sizes = computed(() => {
-  const clockSizeFraction = Math.min(Math.max(0, props.clockSidesRation), 1)
+  // FIXME: allow for breaking out of square and going for rectangle if provided multiple properties
+  const clockSizeFraction = Math.min(Math.max(0, props.sizeClockSidesRation), 1)
   const sideSizeFraction = (1 - clockSizeFraction) / SIDES_COUNT
 
   const clock = Math.floor(props.size * clockSizeFraction)

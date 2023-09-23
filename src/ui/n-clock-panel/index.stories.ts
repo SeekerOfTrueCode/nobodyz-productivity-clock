@@ -71,10 +71,18 @@ export const WithIcons: Story = {
     },
     template: `
     <n-clock-panel v-bind="args">
-      <template #header><NButton size="x-small" variant="text" icon="mdi-home"/></template> 
-      <template #footer><NButton size="x-small" variant="text" icon="mdi-home"/></template>
-      <template #start><NButton size="x-small" variant="text" icon="mdi-home"/></template> 
-      <template #end><NButton size="x-small" variant="text" icon="mdi-home"/></template>
+      <template #header>
+        Title
+        <NButton size="x-small" variant="text" icon="mdi-music"/>
+        <NButton size="x-small" variant="text" icon="mdi-pin"/>
+        <NButton size="x-small" variant="text" icon="mdi-close"/>
+      </template> 
+      <template #footer>
+        <NButton size="x-small" variant="text" icon="mdi-pause"/>
+        <NButton size="x-small" variant="text" icon="mdi-repeat"/>
+      </template>
+      <template #start><div></div></template> 
+      <template #end><div></div></template>
     <n-clock-panel/>
     `
   })

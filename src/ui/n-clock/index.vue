@@ -5,7 +5,7 @@ import { percentageOf } from '@/utils/math/percentage-of'
 const props = withDefaults(
   defineProps<{
     modelValue: number;
-    valueMax?: number | undefined;
+    valueMax?: number | undefined; // FIXME: maybe modelValueMax?
     size?: number;
   }>(),
   {
@@ -24,7 +24,7 @@ const timeCurrent = computed(() => secondsToTimeFormat(props.modelValue)) // tim
 </script>
 
 <template>
-  <div data-testid="n-clock" class="n-clock flex-inline-center"> 
+  <div data-testid="n-clock" class="n-clock flex-inline-center">
     <div class="n-clock__text-container flex-center">
       <span class="n-clock__text" :style="{ fontSize }" v-text="timeCurrent" />
     </div>
